@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>JumpForge</title>
+<meta name="theme-color" content="#09101a" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="bg"></div>
+<div class="app-shell">
+  <header class="topbar panel">
+    <div class="brand-wrap">
+      <img class="brand-logo" src="logo.svg" alt="JumpForge logo" />
+      <div>
+        <div class="eyebrow">Vertical jump training</div>
+        <h1>JumpForge</h1>
+      </div>
+    </div>
+  </header>
+
+  <section class="focus panel">
+    <div class="focus-copy">
+      <div class="eyebrow">Today's focus</div>
+      <h2 id="focusTitle">Week 1 • Mon</h2>
+      <p id="focusSubtitle">Volume building and clean movement quality.</p>
+    </div>
+    <div class="focus-controls">
+      <label><span>Week</span><select id="weekSelect"></select></label>
+      <label><span>Day</span><select id="daySelect"></select></label>
+    </div>
+  </section>
+
+  <main id="viewContainer" class="view-container">
+    <section id="homeView" class="view active"></section>
+    <section id="programView" class="view"></section>
+    <section id="todayView" class="view"></section>
+    <section id="trackerView" class="view"></section>
+    <section id="settingsView" class="view"></section>
+  </main>
+
+  <nav class="tabbar panel">
+    <button class="tab active" data-nav="home"><span class="tab-ico">⌂</span><span>Home</span></button>
+    <button class="tab" data-nav="program"><span class="tab-ico">▤</span><span>Program</span></button>
+    <button class="tab" data-nav="today"><span class="tab-ico">✓</span><span>Today</span></button>
+    <button class="tab" data-nav="tracker"><span class="tab-ico">◔</span><span>Tracker</span></button>
+    <button class="tab" data-nav="settings"><span class="tab-ico">⚙</span><span>Settings</span></button>
+  </nav>
+</div>
+
+<div id="exerciseModal" class="modal hidden" aria-hidden="true">
+  <div class="modal-backdrop" data-close="modal"></div>
+  <div class="modal-sheet panel">
+    <button class="modal-close" data-close="modal">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+<input id="importInput" type="file" accept="application/json" hidden />
+<script src="app.js"></script>
+</body>
+</html>
